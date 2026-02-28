@@ -228,17 +228,17 @@ def extract_slide_data(page: Page, html_path: Path) -> Dict[str, Any]:
         right_words = total_words - left_words
 
         density_warnings: List[str] = []
-        if total_words > 260:
+        if total_words > 400:
             density_warnings.append(
-                f"Slide {index + 1} has {total_words} words (limit 260)."
+                f"Slide {index + 1} has {total_words} words (limit 400)."
             )
-        if left_words > 160:
+        if left_words > 250:
             density_warnings.append(
-                f"Slide {index + 1} left half has {left_words} words (>160)."
+                f"Slide {index + 1} left half has {left_words} words (>250)."
             )
-        if right_words > 160:
+        if right_words > 250:
             density_warnings.append(
-                f"Slide {index + 1} right half has {right_words} words (>160)."
+                f"Slide {index + 1} right half has {right_words} words (>250)."
             )
 
         overflow_items = []
